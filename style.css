@@ -692,7 +692,7 @@ footer .social a:hover{
         position: absolute;
         top: 0;
         right: -10px;
-        width: auto;
+        width: 100%;
         padding: 1rem 1rem;
         background: white;
         border-left:  2px solid rgb(165, 37, 37);;
