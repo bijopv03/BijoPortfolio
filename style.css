@@ -740,6 +740,9 @@ footer .social a:hover{
    .timeline-dot{
     left: 0;
    }
+    #card-img{
+    width: 300px;
+   }
 
 }
 
