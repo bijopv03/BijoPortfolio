@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     margin: 0;
@@ -7,28 +7,42 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
 }
-
 html{
-    font-size: 62.5%;
+
+    font-size:62.5%;
+    overflow-x: hidden;
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden ;
-    background-color: black;
+body{
+    background: black;
     color: white;
+    font-family: "Montserrat", sans-serif;
 }
 
-header{
-    position: fixed ;
+html::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: black;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #ba294d;
+}
+
+/* Home Css Starts */
+
+.header{
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9% ;
-    background-color: black;
+    padding: 3rem 9%;
+    background: rgba(0,0,0,0.7);
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
@@ -38,71 +52,79 @@ header{
 
 .logo{
     font-size: 3rem;
-    color: #b74b4d;
-    font-weight: 800;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    color: #ba294d;
     cursor: pointer;
     transition: 0.5s ease;
 }
 
 .logo:hover{
-    color: #cc3427;
+    color: red;
     transform: scale(1.1);
 }
-nav{
-    background-color: black;
-    text-decoration: none;
-}
 
-nav a{
-    font-size: 1.8rem;
+.navbar a{
     color: white;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid black;
     text-decoration: none;
+    font-size: 1.5rem;
+    margin: 10px;
+    transition: 0.5s ease;
+    border-radius: 3px solid transparent;
 }
 
-nav a:hover,
-nav a.active{
-    color: #b74b4d;
-    border-bottom: 3px solid #b74b4d;
+.navbar a:hover,
+.navbar a.active{
+    color: rgb(165, 37, 37);
+    border-bottom: 3px solid rgb(165, 37, 37);
+   
 }
 
-@media(max-width:995px){
-    nav{
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4d;
-        border-bottom: 3px solid #b74b4d;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: #1b1b1b;
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
-    }
+#menu-icons{
+    color: rgb(165, 37, 37);
+    font-size: 3.6rem;
+    display: none;
+}
 
-    nav.active{
+@media (max-width:995px){
+    #menu-icons{
         display: block;
     }
-    nav a{
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        border-left: 3px solid rgb(165, 37, 37);
+        border-bottom: 3px solid rgb(165, 37, 37);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: black;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        display: none;
+        color: white;
+    }
+
+    .navbar .active{
+        display: block;
+    }
+
+    .navbar a{
         display: block;
         font-size: 2rem;
-        margin: 3rem 0; 
+        margin: 3rem 0;
     }
 
-    nav a:hover,
-    nav a.active{
+    .navbar a:hover,
+    .navbar a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4d;
+        border-bottom: 0.5rem solid black;
     }
-    
-}
-a{
-    text-decoration: none;
+    .home{
+        background-color: black;
+       }
 }
 
 section{
@@ -115,7 +137,7 @@ section{
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background: black;
 }
 
 .home .home-content h1{
@@ -125,31 +147,42 @@ section{
 }
 
 span{
-    color: #b74b4d;
+    color: rgb(165, 37, 37);
 }
 
-.home-content p{
-    font-size: 1.6rem;
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .home-img{
     border-radius: 50%;
 }
-
-
-.home-img img{
+.home-img img{ 
     position: relative;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 20px solid;
+    box-shadow: 0 0 25px rgb(165, 37, 37);
     cursor: pointer;
-    transition: 0.2s linear;
-
+    transition: 0.5s ease-in-out;
 }
+
+img {
+    width:  500px;
+    height: 500px;
+    top: auto;
+    object-fit: center;
+}
+
 
 .home-img img:hover{
     transform: scale(1.1);
-    font-size: 1.8rem;
+    filter: drop-shadow(0 0 75px rgb(165, 37, 37));
+}
+
+.home-content p{
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -159,52 +192,58 @@ span{
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #b74b4d;
+    background: transparent ;
+    border-radius: 0.2rem solid rgb(165, 37, 37);
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    color: #b74b4d;
+    border: 0.2rem solid rgb(165, 37, 37);
+    color: rgb(165, 37, 37);
+    
 }
 
 .social-icons a:hover{
-    color: black;
+    background: rgb(165, 37, 37);
+    box-shadow: 0 0 25px rgb(165, 37, 37);
     transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4d;
-    box-shadow: 0 0 25px #b74b4d;
+    color: black;
 }
 
-.download-btn{
+.btn{
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: #b74b4d;
-    letter-spacing: 0.3rem;
+    background: black;
+    border-radius: 20px;
+    font-size: 25px;
+    color: #ba294d;
+    letter-spacing: 0.1rem;
     font-weight: 600;
-    border: 2px solid #b74b4d;
     transition: 0.3s ease;
+    border: 0.2rem solid #ba294d;
     cursor: pointer;
-}
-.download-btn:hover{
-    transform: scale(1.03);
-    background-color: #b74b4d;
-    color: black;
-    box-shadow: 0 0 25px #b74b4d;
-}
-.btn:hover{
-    transform: scale(1.03);
-    background-color: #b74b4d;
-    color: black;
-    box-shadow: 0 0 25px #b74b4d;
+
 }
 
-.home-content .typewriter{
-    font-size: clamp(4rem, 3rem + 5vw, 2.5rem);
-    font-weight: 1000;
+.btn:hover{
+    transform: scale(1.03);
+    background-color: rgb(165, 37, 37);
+    color: black;
+    box-shadow: 0 0 25px rgb(165, 37, 37);
+    filter: drop-shadow(0 0 10px red);
 }
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-height: 100px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+/* Home Css End  */
 
 @media(max-width:1000px){
     .home{
@@ -215,19 +254,20 @@ span{
 @media(max-width:995px){
     .home{
         flex-direction: column;
-        margin: 5rem 4rem;
-
+        background-color: black;
     }
-    
-    .home-content h1{
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home .home-content h1{
         font-size: 5rem;
     }
-    
+
     .home-img img{
-        width: 50vh;
+        width: 70vw;
         margin-top: 4rem;
     }
-
 }
 
 h1.skills{
@@ -320,11 +360,25 @@ h1.skills{
         grid-template-columns: repeat(2, 1fr);
         margin: 1rem;
         padding: 2rem 0.2rem 2rem 0.2rem;
+        flex-direction: column;
+        align-items:center;
     } 
     .skills .container{
         margin-top: 5px;
         width: 100%;
+        flex-direction: column;
+        align-items:center;
     }
+    body{
+        background-color: black
+    }
+    
+}
+@media (max-width: 768px) {
+    .skills .container .row {
+        flex-direction: column;
+        align-items:center;
+}
 }
 
 
@@ -614,12 +668,12 @@ footer .social a:hover{
         width: 30vw;
         height: 30vw;
     }
+    body{
+        background-color: black
+    }
+    
 
 }
-
-/* Footer Section css End*/
-
-/* Responsive time  */
 @media(max-width:895px){
     #menu-icon{
         display: block;
@@ -632,9 +686,7 @@ footer .social a:hover{
     .navbar{
         position: absolute;
         top: 0;
-        right: -10px;
         width: auto;
-        padding: 1rem 1rem;
         background: white;
         border-left:  2px solid #ff154c;
         border-bottom:  2px solid #ff154c;
@@ -647,9 +699,8 @@ footer .social a:hover{
     }
     .navbar a{
         display: block;
-        color: black;
-        font-size: 2rem;
-        margin: 3rem 0;
+        color: white;
+        font-size: 15px;
     }
 
     .navbar a:hover{
@@ -680,6 +731,9 @@ footer .social a:hover{
 
    .timeline-dot{
     left: 0;
+   }
+   body{
+    background-color: black
    }
 
 }
