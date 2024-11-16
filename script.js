@@ -1,42 +1,39 @@
-// Typewriter Effect
-
-const texts = [
-    "FULLSTACK DEVELOPER"
-]
-
-let speed = 100;
-const textElements = document.querySelector(".typewriter-text");
-
-let textIndex = 0;
-let characterIndex = 0;
-
-function typeWriter() {
-    if(characterIndex < texts[textIndex].length){
-        textElements.innerHTML += texts[textIndex].charAt(characterIndex);
-        characterIndex++;
-        setTimeout(typeWriter, speed);
-    }
-    else{
-        setTimeout(eraseText, 1000);
-    }
-}
-
-function eraseText() {
-    if(characterIndex > 0){
-        textElements.innerHTML = texts[textIndex].substring(0, characterIndex - 1);
-        characterIndex--;
-        setTimeout(eraseText, speed);
-    }
-    else{
-        textIndex = (textIndex + 1) % texts.length;
-        characterIndex = 0;
-        setTimeout(typeWriter, speed);
-    }
-}
-
-window.onload = typeWriter
-
-
-
-
+var typed = new Typed(".typewriter-text ", {
+    strings: [
+      "FULLSTACK DEVELOPER"
+    ],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true,
+  });
+  
+  let menuIcon = document.querySelector('#menu-icons');
+  let navbar = document.querySelector('.navbar');
+  
+  let section = document.querySelectorAll('.section');
+  let navLinks = document.querySelectorAll('.header nav a');
+  
+  window.onscroll = () => {
+      sections.forEach(sec => {
+          let top = window.scrollY;
+          let offset = window.offsetTop - 150;
+          let height = window.offsetHeight;
+          let id = sec.getAttribute('id');
+  
+          if (top >= offset && top < offset + height){
+              navLinks.forEach(links => {
+                  links.classList.remove('active');
+                  document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                  
+              })
+          }
+      })
+  }
+  
+  menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+  }
+  
+  
   
