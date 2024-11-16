@@ -31,7 +31,7 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-    background: #ba294d;
+    background: rgb(165, 37, 37);
 }
 
 /* Home Css Starts */
@@ -41,7 +41,7 @@ html::-webkit-scrollbar-thumb{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 20px;
     background: rgba(0,0,0,0.7);
     filter: drop-shadow(10px);
     display: flex;
@@ -54,7 +54,7 @@ html::-webkit-scrollbar-thumb{
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
-    color: #ba294d;
+    color: rgb(165, 37, 37);
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -68,7 +68,7 @@ html::-webkit-scrollbar-thumb{
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    margin: 10px;
+    margin: 4rem;
     transition: 0.5s ease;
     border-radius: 3px solid transparent;
 }
@@ -79,6 +79,7 @@ html::-webkit-scrollbar-thumb{
     border-bottom: 3px solid rgb(165, 37, 37);
    
 }
+
 
 #menu-icons{
     color: rgb(165, 37, 37);
@@ -95,7 +96,7 @@ html::-webkit-scrollbar-thumb{
         position: absolute;
         top: 100%;
         right: 0;
-        width: 100%;
+        width: 40%;
         border-left: 3px solid rgb(165, 37, 37);
         border-bottom: 3px solid rgb(165, 37, 37);
         border-bottom-left-radius: 2rem;
@@ -103,7 +104,6 @@ html::-webkit-scrollbar-thumb{
         background-color: black;
         border-top: 0.1rem solid rgba(0,0,0,0.1);
         display: none;
-        color: white;
     }
 
     .navbar .active{
@@ -122,9 +122,6 @@ html::-webkit-scrollbar-thumb{
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid black;
     }
-    .home{
-        background-color: black;
-       }
 }
 
 section{
@@ -178,7 +175,7 @@ img {
 
 .home-img img:hover{
     transform: scale(1.1);
-    filter: drop-shadow(0 0 75px rgb(165, 37, 37));
+    filter: drop-shadow(0 0 75px red);
 }
 
 .home-content p{
@@ -214,13 +211,13 @@ img {
     display: inline-block;
     padding: 1rem 2.8rem;
     background: black;
-    border-radius: 20px;
-    font-size: 25px;
-    color: #ba294d;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: rgb(165, 37, 37);
     letter-spacing: 0.1rem;
     font-weight: 600;
     transition: 0.3s ease;
-    border: 0.2rem solid #ba294d;
+    border: 0.2rem solid rgb(165, 37, 37);
     cursor: pointer;
 
 }
@@ -254,7 +251,7 @@ img {
 @media(max-width:995px){
     .home{
         flex-direction: column;
-        background-color: black;
+        margin: 5rem 4rem;
     }
     .home .home-content h3{
         font-size: 2.5rem;
@@ -270,19 +267,64 @@ img {
     }
 }
 
-h1.skills{
-    font-size: 70px;
-   
-}
-.skils{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: black;
-}
-.skills{
+
+/* Service Css Starts  */
+
+
+.services{
     background: black;
+}
+
+h2.heading{
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.service-info p{
+    font-size: 20px;
+}
+
+.service-info h4{
+    font-size: 30px;
+}
+
+
+.service-box{
+    padding: 30px;
+    border-radius: 60px;
+    box-shadow: 0 4px 10px #b74b4d;
+    
+}
+
+
+@media (max-width: 991px) {
+   section{
+        padding: 10rem 3% 2rem;
+    }
+    .services{
+        padding-bottom: 7rem;
+    
+    }
+}
+
+
+@media (max-width: 895px) {
+   .services h2{
+        margin: 3rem;
+    }
+    .services-container{
+       grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* Service Section css End */
+
+/* Skills Section css Starts */
+
+.skills{
+   background: black;
 }
 
 .skills h2{
@@ -296,8 +338,8 @@ h1.skills{
     background: black;
     color: white;
     border-radius: 1rem;
-    padding: 20px;
-    width: 90%;
+    padding: 2rem;
+    width: 70%;
     margin: auto;
     margin-top: 2rem;
 }
@@ -307,23 +349,20 @@ h1.skills{
     grid-template-columns: repeat(5, 1fr);
     flex-wrap: wrap;
     gap: 1.8rem;
-    padding: 50px;
-    background-color: black;
 }
 
 .skills .container .bar{
     margin-bottom: 15px;
-    padding: 30px;
+    padding: 10px;
     border-radius: 1rem;
     background: black;
     transition: 0.3s ease;
     cursor: pointer;
-    text-align: center;
 }
 
 
-.bar:hover{
-    box-shadow: 0 4px 10px #b74b4d;
+.skills .container .bar:hover{
+    box-shadow: 0 4px 10px red;
     
    
    
@@ -360,28 +399,16 @@ h1.skills{
         grid-template-columns: repeat(2, 1fr);
         margin: 1rem;
         padding: 2rem 0.2rem 2rem 0.2rem;
-        flex-direction: column;
-        align-items:center;
     } 
     .skills .container{
         margin-top: 5px;
         width: 100%;
-        flex-direction: column;
-        align-items:center;
     }
-    body{
-        background-color: black
-    }
-    
-}
-@media (max-width: 768px) {
-    .skills .container .row {
-        flex-direction: column;
-        align-items:center;
-}
 }
 
+/* Skills Section css End */
 
+/* Education Section css starts */
 
 .timeline-section{
     min-height: 100vh;
@@ -411,7 +438,7 @@ h1.skills{
     position: absolute;
     width: 5px;
     height: 100%;
-    background-color: #982b2c;
+    background-color: rgb(165, 37, 37);
     left: calc(50% - 1px);
 }
 
@@ -437,7 +464,7 @@ h1.skills{
 .timeline-dot{
     height:21px ;
     width: 21px ;
-    background-color: #982b2c;
+    background-color: rgb(165, 37, 37);
     position: absolute;
     left: calc(50% - 8px);
     border-radius: 50%;
@@ -453,7 +480,7 @@ h1.skills{
 
 
 .timeline-content{
-    background-color: #982b2c;
+    background-color: rgb(165, 37, 37);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.25);
     padding: 30px;
@@ -482,32 +509,8 @@ h1.skills{
     line-height: 22px;
 }
 
-.services{
-    background: black;
-}
 
-h2.heading{
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.service-info p{
-    font-size: 20px;
-}
-
-.service-info h4{
-    font-size: 30px;
-}
-
-
-.service-box{
-    padding: 30px;
-    border-radius: 60px;
-    box-shadow: 0 4px 10px #b74b4d;
-    
-}
+/* Education Section css End*/
 
 .projects{
     background: black;
@@ -518,8 +521,11 @@ h2.heading{
 }
 
 .card{
+    background-color: black;
     width: 300px;
     height: 350px;
+    display: inline;
+    text-align: center;
 }
 
 .col-md-4{
@@ -527,7 +533,7 @@ h2.heading{
 }
 
 
-
+/* contact Section css starts*/
 .contact{
     background-color: black;
 }
@@ -561,20 +567,19 @@ h2.heading{
     color: white;
     background: #161616;
     border-radius: 0.8rem;
-    border: 2px solid #ff154c;
+    border: 2px solid rgb(165, 37, 37);;
     margin: 1rem 0;
     resize: none;
 }
 
 .contact  form .btn {
     margin-top:  2rem;
-    background-color: #8a3032;
-    width: 130px;
-    height: 40px;
-    color: white;
-    border-radius: 50px;
 }
+   
 
+/* contact Section css End*/
+
+/* Footer Section css Starts*/
 
 footer{
     position: relative;
@@ -587,13 +592,13 @@ footer{
 .footer .social{
     text-align: center;
     padding-bottom: 25px ;
-    color: #ba294d;
+    color: rgb(165, 37, 37);;
 }
 
 footer .social a{
     font-size: 25px;
-    color: #ba294d;
-    border: 2px solid #ba294d;
+    color: rgb(165, 37, 37);;
+    border: 2px solid rgb(165, 37, 37);;
     width: 42px;
     height: 42px;
     line-height: 42px;
@@ -601,14 +606,14 @@ footer .social a{
     text-align: center;
     border-radius: 50%;
     margin: 0 10px;
-    color: #ba294d;
+    color: rgb(165, 37, 37);;
     transition: 0.3s ease-in-out;
 }
 
 
 footer .social a:hover{
-    background: #ba294d;
-    box-shadow: 0 0 25px #ba294d;
+    background: rgb(165, 37, 37);;
+    box-shadow: 0 0 25px rgb(165, 37, 37);;
     transform: scale(1.3) translateY(-5px);
     color: black;
 }
@@ -617,7 +622,7 @@ footer .social a:hover{
 footer .social a:hover{
     transform: scale(1.2) translateY( -10px);
     background-color: black;
-    color: #ff154c;
+    color: rgb(165, 37, 37);;
 }
 
 .footer ul{
@@ -668,12 +673,12 @@ footer .social a:hover{
         width: 30vw;
         height: 30vw;
     }
-    body{
-        background-color: black
-    }
-    
 
 }
+
+/* Footer Section css End*/
+
+/* Responsive time  */
 @media(max-width:895px){
     #menu-icon{
         display: block;
@@ -686,10 +691,12 @@ footer .social a:hover{
     .navbar{
         position: absolute;
         top: 0;
+        right: -10px;
         width: auto;
+        padding: 1rem 1rem;
         background: white;
-        border-left:  2px solid #ff154c;
-        border-bottom:  2px solid #ff154c;
+        border-left:  2px solid rgb(165, 37, 37);;
+        border-bottom:  2px solid rgb(165, 37, 37);;
         border-bottom-left-radius: 2rem;
         display: none;
 
@@ -699,8 +706,9 @@ footer .social a:hover{
     }
     .navbar a{
         display: block;
-        color: white;
-        font-size: 15px;
+        color: black;
+        font-size: 2rem;
+        margin: 3rem 0;
     }
 
     .navbar a:hover{
@@ -731,9 +739,6 @@ footer .social a:hover{
 
    .timeline-dot{
     left: 0;
-   }
-   body{
-    background-color: black
    }
 
 }
